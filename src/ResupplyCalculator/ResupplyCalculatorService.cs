@@ -29,7 +29,7 @@ namespace ResupplyCalculator
                 Ships = loadedData.Select(x => new Starship()
                 {
                     Name = x.Name,
-                    MGLT = x.MGLT.ConvertToIntOrNull(),
+                    MGLT = x.MGLT.ConvertToLongOrNull(),
                     AvailableConsumablesInHours = x.Consumables.ComputeConsumablesDuration()
                 }).ToList();
             }

@@ -19,7 +19,7 @@ namespace ResupplyCalculator.Helpers
             return false;
         }
 
-        public static long? ConvertToIntOrNull(this string src)
+        public static long? ConvertToLongOrNull(this string src)
         {
             if(src.ConvertToValidInteger(out long result))
             {
