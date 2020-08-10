@@ -23,5 +23,22 @@ namespace ResupplyCalculator.Tests.UnitTests
             var numberOfStops = s.ComputeNumberOfStops(distance);
             Assert.Equal(result, numberOfStops);
         }
+
+
+        [Theory(DisplayName = "Should return null if a spaceship does not have all the required parameters.")]       
+        [InlineData(1000000, 75, null)]
+        [InlineData(1000000, null, 168)]
+        [InlineData(1000000, null, null)]
+        public void ShouldReturnNullOnInvalidSpaceship(int distance, int? mglt, int? consumableHours)
+        {
+            Starship s = new Starship()
+            {
+                Name = "Test ship",
+                MGLT = mglt,
+                AvailableConsumablesInHours = consumableHours
+            };
+            var numberOfStops = s.ComputeNumberOfStops(distance);
+            Assert.Null(numberOfStops);
+        }
     }
 }
