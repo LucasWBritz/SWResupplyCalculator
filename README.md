@@ -1,4 +1,4 @@
-# SWResupplyCalculator
+# Star Wars Starship Resupply Calculator
 
 This console app computes the number of resupply stops needed for each Star Wars spaceship to go through a given distance. 
 
